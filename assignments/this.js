@@ -27,10 +27,40 @@ sayHi('Hi');
 
 // code example for Implicit Binding
 
+const myChild = {
+    name: 'Milani',
+    age: 4,
+    favSnack: 'popcorn',
+    eat: function(){
+        return `${this.name} is ${this.age} years old and she loves ${this.favSnack}!`;
+    }
+}
+
+console.log(myChild.eat());
+
 // Principle 3
 
 // code example for New Binding
 
+function OldestChild(name){
+    this.child = name;
+}
+
+let myOldestChild = new OldestChild('Destiny');
+
+console.log(myOldestChild.child);
+
 // Principle 4
 
 // code example for Explicit Binding
+
+function dinosaur(){
+    console.log(this.sound);
+}
+
+let myDino = {
+    name: 'T-rex',
+    sound: 'RAWR!!! 🦖'
+}
+
+dinosaur.call(myDino);
